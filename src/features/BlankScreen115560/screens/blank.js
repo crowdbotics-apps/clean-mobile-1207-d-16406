@@ -41,5 +41,6 @@ const styles = StyleSheet.create({
   Text_1: {},
   Text_1: {},
   Text_1: {},
+  Text_1: {},
   Text_1: {}
 })
