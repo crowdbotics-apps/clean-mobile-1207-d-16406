@@ -45,6 +45,28 @@ function api_v1_homepage_partial_update(action) {
 function api_v1_login_create(action) {
   return cleanMobileAPI.post(`/api/v1/login/`)
 }
+function api_v1_pet_list(action) {
+  return cleanMobileAPI.get(`/api/v1/pet/`)
+}
+function api_v1_pet_create(action) {
+  return cleanMobileAPI.post(`/api/v1/pet/`, null, { data: action.data })
+}
+function api_v1_pet_read(action) {
+  return cleanMobileAPI.get(`/api/v1/pet/${action.id}/`)
+}
+function api_v1_pet_update(action) {
+  return cleanMobileAPI.put(`/api/v1/pet/${action.id}/`, null, {
+    data: action.data
+  })
+}
+function api_v1_pet_partial_update(action) {
+  return cleanMobileAPI.patch(`/api/v1/pet/${action.id}/`, null, {
+    data: action.data
+  })
+}
+function api_v1_pet_delete(action) {
+  return cleanMobileAPI.delete(`/api/v1/pet/${action.id}/`)
+}
 function api_v1_signup_create(action) {
   return cleanMobileAPI.post(`/api/v1/signup/`, null, { data: action.data })
 }
@@ -102,6 +124,12 @@ export const apiService = {
   api_v1_homepage_update,
   api_v1_homepage_partial_update,
   api_v1_login_create,
+  api_v1_pet_list,
+  api_v1_pet_create,
+  api_v1_pet_read,
+  api_v1_pet_update,
+  api_v1_pet_partial_update,
+  api_v1_pet_delete,
   api_v1_signup_create,
   rest_auth_login_create,
   rest_auth_logout_list,
