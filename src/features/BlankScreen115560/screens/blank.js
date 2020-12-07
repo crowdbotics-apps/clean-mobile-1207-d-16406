@@ -1,3 +1,4 @@
+import { connect } from "react-redux"
 import React, { Component } from "react"
 import {
   View,
@@ -17,7 +18,7 @@ import Slider from "@react-native-community/slider"
 import { CheckBox } from "react-native-elements"
 import { SlideMenuIcon } from "../../../navigator/slideMenuIcon"
 
-export default class Blank extends React.Component {
+class Blank extends React.Component {
   constructor(props) {
     super(props)
 
@@ -50,5 +51,27 @@ const styles = StyleSheet.create({
   Text_1: {},
   Text_1: {},
   Text_1: {},
+  Text_1: {},
   Text_1: {}
 })
+const mapStateToProps = state => {
+  return {
+    pets: state.apiReducer.pets
+      .filter(pet => pet.name == "Felix")
+      .sort((a, b) => {
+        var valueA = a.name.toUpperCase()
+        var valueB = b.name.toUpperCase()
+        if (valueA < valueB) {
+          return -1
+        } else if (valueA > valueB) {
+          return 1
+        } else {
+          return 0
+        }
+      })
+  }
+}
+const mapDispatchToProps = () => {
+  return {}
+}
+export default connect(mapStateToProps, mapDispatchToProps)(Blank)
