@@ -1,4 +1,4 @@
-import React from "react";
+import React, { Component } from "react"
 import {
   View,
   Image,
@@ -10,32 +10,29 @@ import {
   TextInput,
   StyleSheet,
   ScrollView
-} from "react-native";
-import DateTimePicker from 'react-native-datepicker';
-import Icon from 'react-native-vector-icons/FontAwesome';
-import Slider from '@react-native-community/slider';
-import { CheckBox } from 'react-native-elements';
-import {SlideMenuIcon} from '../../../navigator/slideMenuIcon';
+} from "react-native"
+import DateTimePicker from "react-native-datepicker"
+import Icon from "react-native-vector-icons/FontAwesome"
+import Slider from "@react-native-community/slider"
+import { CheckBox } from "react-native-elements"
+import { SlideMenuIcon } from "../../../navigator/slideMenuIcon"
 
 export default class Blank extends React.Component {
-  static navigationOptions = ({navigation}) => {
-    return {
-      headerLeft: <SlideMenuIcon navigationProps={navigation} />,
-    };
-  };
-  
-  state = {};
+  constructor(props) {
+    super(props)
+    this.state = {}
+  }
+  static navigationOptions = ({ navigation }) => {
+    return { headerLeft: <SlideMenuIcon navigationProps={navigation} /> }
+  }
 
-  render = () => (
-    <View style={styles.container}>
-      <Text>This is your new component</Text>
-    </View>
-  );
+  render = () => <Text>{this.props.pets.name}</Text>
 }
 
 const styles = StyleSheet.create({
   container: {
     flex: 1,
-    marginHorizontal: 16,
+    marginHorizontal: 16
   },
-});
+  Text_1: {}
+})
