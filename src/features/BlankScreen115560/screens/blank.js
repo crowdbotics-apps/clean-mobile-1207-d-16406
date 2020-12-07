@@ -20,6 +20,7 @@ import { SlideMenuIcon } from "../../../navigator/slideMenuIcon"
 export default class Blank extends React.Component {
   constructor(props) {
     super(props)
+
     this.state = {}
   }
   static navigationOptions = ({ navigation }) => {
@@ -34,5 +35,7 @@ const styles = StyleSheet.create({
     flex: 1,
     marginHorizontal: 16
   },
+
+  Text_1: {},
   Text_1: {}
 })
