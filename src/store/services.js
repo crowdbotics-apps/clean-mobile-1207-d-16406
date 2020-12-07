@@ -1,15 +1,8 @@
 import axios from "axios"
-const universitiesAPI = axios.create({
-  baseURL: "http://universities.hipolabs.com",
-  headers: { Accept: "application/json", "Content-Type": "application/json" }
-})
 const cleanMobileAPI = axios.create({
   baseURL: "https://clean-mobile-1207-d-16406-prod.herokuapp.com/",
   headers: { Accept: "application/json", "Content-Type": "application/json" }
 })
-function universitiesapi_get_search_list(action) {
-  return universitiesAPI.get(`/search`, null, { params: { name: action.name } })
-}
 function api_v1_customtext_list(action) {
   return cleanMobileAPI.get(`/api/v1/customtext/`)
 }
@@ -114,7 +107,6 @@ function rest_auth_user_partial_update(action) {
   return cleanMobileAPI.patch(`/rest-auth/user/`, null, { data: action.data })
 }
 export const apiService = {
-  universitiesapi_get_search_list,
   api_v1_customtext_list,
   api_v1_customtext_read,
   api_v1_customtext_update,

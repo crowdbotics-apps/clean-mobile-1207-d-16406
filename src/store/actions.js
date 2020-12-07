@@ -1,23 +1,4 @@
 import * as types from "./constants"
-export const universitiesapi_get_search_list = name => ({
-  type: types.UNIVERSITIESAPI_GET_SEARCH_LIST,
-  name
-})
-
-export const universitiesapi_get_search_listSucceeded = (
-  response,
-  starter
-) => ({
-  type: types.UNIVERSITIESAPI_GET_SEARCH_LIST_SUCCEEDED,
-  response,
-  starter
-})
-
-export const universitiesapi_get_search_listFailed = (error, starter) => ({
-  type: types.UNIVERSITIESAPI_GET_SEARCH_LIST_FAILED,
-  error,
-  starter
-})
 
 export const api_v1_customtext_list = () => ({
   type: types.API_V1_CUSTOMTEXT_LIST
@@ -376,76 +357,91 @@ export const rest_auth_user_partial_updateFailed = (error, starter) => ({
   error,
   starter
 })
+
 export const api_v1_pet_list = () => ({ type: types.API_V1_PET_LIST })
 export const api_v1_pet_listSucceeded = (response, starter) => ({
   type: types.API_V1_PET_LIST_SUCCEEDED,
   response,
   starter
 })
+
 export const api_v1_pet_listFailed = (error, starter) => ({
   type: types.API_V1_PET_LIST_FAILED,
   error,
   starter
 })
+
 export const api_v1_pet_create = data => ({
   type: types.API_V1_PET_CREATE,
   data
 })
+
 export const api_v1_pet_createSucceeded = (response, starter) => ({
   type: types.API_V1_PET_CREATE_SUCCEEDED,
   response,
   starter
 })
+
 export const api_v1_pet_createFailed = (error, starter) => ({
   type: types.API_V1_PET_CREATE_FAILED,
   error,
   starter
 })
+
 export const api_v1_pet_read = () => ({ type: types.API_V1_PET_READ })
 export const api_v1_pet_readSucceeded = (response, starter) => ({
   type: types.API_V1_PET_READ_SUCCEEDED,
   response,
   starter
 })
+
 export const api_v1_pet_readFailed = (error, starter) => ({
   type: types.API_V1_PET_READ_FAILED,
   error,
   starter
 })
+
 export const api_v1_pet_update = data => ({
   type: types.API_V1_PET_UPDATE,
   data
 })
+
 export const api_v1_pet_updateSucceeded = (response, starter) => ({
   type: types.API_V1_PET_UPDATE_SUCCEEDED,
   response,
   starter
 })
+
 export const api_v1_pet_updateFailed = (error, starter) => ({
   type: types.API_V1_PET_UPDATE_FAILED,
   error,
   starter
 })
+
 export const api_v1_pet_partial_update = data => ({
   type: types.API_V1_PET_PARTIAL_UPDATE,
   data
 })
+
 export const api_v1_pet_partial_updateSucceeded = (response, starter) => ({
   type: types.API_V1_PET_PARTIAL_UPDATE_SUCCEEDED,
   response,
   starter
 })
+
 export const api_v1_pet_partial_updateFailed = (error, starter) => ({
   type: types.API_V1_PET_PARTIAL_UPDATE_FAILED,
   error,
   starter
 })
+
 export const api_v1_pet_delete = () => ({ type: types.API_V1_PET_DELETE })
 export const api_v1_pet_deleteSucceeded = (response, starter) => ({
   type: types.API_V1_PET_DELETE_SUCCEEDED,
   response,
   starter
 })
+
 export const api_v1_pet_deleteFailed = (error, starter) => ({
   type: types.API_V1_PET_DELETE_FAILED,
   error,
