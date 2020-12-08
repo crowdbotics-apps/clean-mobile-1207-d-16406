@@ -23,7 +23,7 @@ class Blank extends React.Component {
   constructor(props) {
     super(props)
 
-    this.state = { CheckBox_4: true }
+    this.state = { CheckBox_4: this.props.petsCheckBox4.is_stray }
   }
   static navigationOptions = ({ navigation }) => {
     return { headerLeft: <SlideMenuIcon navigationProps={navigation} /> }
@@ -33,7 +33,7 @@ class Blank extends React.Component {
     <View>
       <Text>Sample text content</Text>
       <CheckBox
-        title="Is this a stray cat?"
+        title={this.props.petsCheckBox4.stray_info}
         checked={this.state.CheckBox_4}
         onPress={nextChecked => this.setState({ CheckBox_4: nextChecked })}
       />
@@ -44,7 +44,11 @@ class Blank extends React.Component {
 const styles = StyleSheet.create({ View_1: {}, Text_3: {}, CheckBox_4: {} })
 
 const mapStateToProps = state => {
-  return {}
+  return {
+    petsCheckBox4: state.apiReducer.pets.filter(
+      petsCheckBox4 => petsCheckBox4.is_stray == true
+    )
+  }
 }
 
 const mapDispatchToProps = () => {
