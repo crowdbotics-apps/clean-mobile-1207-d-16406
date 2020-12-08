@@ -28,7 +28,7 @@ class Blank extends React.Component {
     return { headerLeft: <SlideMenuIcon navigationProps={navigation} /> }
   }
 
-  render = () => <Text>{this.props.pets.name}</Text>
+  render = () => <Text>{this.props[0].pets.name}</Text>
 }
 
 const styles = StyleSheet.create({
