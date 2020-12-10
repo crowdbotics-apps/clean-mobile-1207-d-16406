@@ -2,6 +2,23 @@ import { put, call, all, spawn, takeEvery } from "redux-saga/effects"
 import { apiService } from "./services"
 import * as types from "./constants"
 import * as actions from "./actions"
+function* universitiesapi_get_search_listWorker(action) {
+  try {
+    const result = yield call(
+      apiService.universitiesapi_get_search_list,
+      action
+    )
+    yield put(actions.universitiesapi_get_search_listSucceeded(result, action))
+  } catch (err) {
+    yield put(actions.universitiesapi_get_search_listFailed(err, action))
+  }
+}
+function* universitiesapi_get_search_listWatcher() {
+  yield takeEvery(
+    types.UNIVERSITIESAPI_GET_SEARCH_LIST,
+    universitiesapi_get_search_listWorker
+  )
+}
 function* api_v1_customtext_listWorker(action) {
   try {
     const result = yield call(apiService.api_v1_customtext_list, action)
@@ -357,6 +374,7 @@ function* rest_auth_user_partial_updateWatcher() {
 }
 export default function* rootSaga() {
   const sagas = [
+    universitiesapi_get_search_listWatcher,
     api_v1_customtext_listWatcher,
     api_v1_customtext_readWatcher,
     api_v1_customtext_updateWatcher,
