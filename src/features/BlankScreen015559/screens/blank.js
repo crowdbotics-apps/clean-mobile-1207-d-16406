@@ -24,13 +24,24 @@ export default class Blank extends React.Component {
     }
   }
 
-  state = {}
+  state = { DateTimePicker_5: new Date("") }
 
   render = () => (
     <View>
       <Text>This screen will not have any data-binding things.</Text>
+      <DateTimePicker
+        showIcon={false}
+        date={this.state.DateTimePicker_5}
+        onDateChange={selectedDate =>
+          this.setState({ DateTimePicker_5: selectedDate })
+        }
+      />
     </View>
   )
 }
 
-const styles = StyleSheet.create({ View_1: {}, Text_3: {} })
+const styles = StyleSheet.create({
+  View_1: {},
+  Text_3: {},
+  DateTimePicker_5: {}
+})
