@@ -24,7 +24,7 @@ export default class Blank extends React.Component {
     }
   }
 
-  state = { DateTimePicker_5: new Date("") }
+  state = { DateTimePicker_5: new Date("12/10/2020") }
 
   render = () => (
     <View>
