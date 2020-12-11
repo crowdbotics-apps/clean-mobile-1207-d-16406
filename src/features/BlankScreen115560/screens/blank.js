@@ -32,16 +32,11 @@ class Blank extends React.Component {
   render = () => (
     <View>
       <Text>Sample text content</Text>
-      <CheckBox
-        title={this.props.petsCheckBox4.stray_info}
-        checked={this.state.CheckBox_4}
-        onPress={nextChecked => this.setState({ CheckBox_4: nextChecked })}
-      />
     </View>
   )
 }
 
-const styles = StyleSheet.create({ View_1: {}, Text_3: {}, CheckBox_4: {} })
+const styles = StyleSheet.create({ View_1: {}, Text_4: {} })
 
 const mapStateToProps = state => {
   return {
